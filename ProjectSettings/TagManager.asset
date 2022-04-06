@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Stat_obj
+  - Int_obj
   layers:
   - Default
   - TransparentFX
