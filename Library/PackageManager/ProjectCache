@@ -5,21 +5,66 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637848885326351816
-    m_Hash: 3338026912
+      ticks: 637850439404897102
+    m_Hash: 1290088384
   m_LockFileStatus:
     m_FilePath: Z:/University/CS2053/CS2053-project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637848885326519540
-    m_Hash: 3927981689
+      ticks: 637850439405765374
+    m_Hash: 1404215224
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
+    - packageId: com.elringus.spriteglow@https://github.com/Elringus/SpriteGlow.git#package
+      testable: 0
+      isDirectDependency: 1
+      version: 1.8.0
+      source: 5
+      resolvedPath: Z:\University\CS2053\CS2053-project\Library\PackageCache\com.elringus.spriteglow@05442994ff
+      assetPath: Packages/com.elringus.spriteglow
+      name: com.elringus.spriteglow
+      displayName: SpriteGlow
+      author:
+        name: Elringus
+        email: 
+        url: https://elringus.me
+      category: 
+      type: 
+      description: A sprite glow effect for Unity game engine
+      status: 4
+      errors: []
+      versions:
+        all: []
+        compatible: []
+        verified: 
+      dependencies: []
+      resolvedDependencies: []
+      keywords: []
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 0
+      repository:
+        type: 
+        url: 
+        revision: 
+        path: 
     - packageId: com.unity.2d.animation@5.0.9
       testable: 0
       isDirectDependency: 1
@@ -108,6 +153,7 @@ m_PackageAssets:
         - 5.0.10
         - 5.1.0
         - 5.1.1
+        - 5.2.0
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
@@ -125,6 +171,7 @@ m_PackageAssets:
         - 8.0.0-pre.3
         - 8.0.0-pre.4
         - 8.0.0
+        - 8.0.1
         compatible:
         - 5.0.9
         - 5.0.10
@@ -304,6 +351,7 @@ m_PackageAssets:
         - 2.1.8
         - 2.1.9
         - 2.1.10
+        - 2.1.11
         - 3.0.0
         - 3.1.1
         - 3.1.3
@@ -318,6 +366,8 @@ m_PackageAssets:
         - 4.1.1
         - 4.1.2
         - 4.1.3
+        - 4.2.0
+        - 4.3.0
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.1
@@ -330,11 +380,14 @@ m_PackageAssets:
         - 6.0.0
         - 6.0.1
         - 6.0.2
+        - 6.0.3
         - 7.0.0-pre.3
         - 7.0.0-pre.4
+        - 7.0.0
         compatible:
         - 4.1.2
         - 4.1.3
+        - 4.2.0
         verified: 4.1.3
       dependencies:
       - name: com.unity.2d.common
@@ -515,6 +568,8 @@ m_PackageAssets:
         - 5.1.5
         - 5.1.6
         - 5.1.7
+        - 5.2.0
+        - 5.3.0
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.0
@@ -525,11 +580,14 @@ m_PackageAssets:
         - 7.0.0
         - 7.0.2
         - 7.0.3
+        - 7.0.4
         - 8.0.0-pre.4
         - 8.0.0-pre.5
+        - 8.0.0
         compatible:
         - 5.1.6
         - 5.1.7
+        - 5.2.0
         verified: 5.1.7
       dependencies:
       - name: com.unity.mathematics
@@ -701,6 +759,8 @@ m_PackageAssets:
         - 3.7.3
         - 3.7.5
         - 4.0.0
+        - 4.0.1
+        - 4.1.0
         compatible:
         - 0.0.3
         - 0.0.4
@@ -744,6 +804,8 @@ m_PackageAssets:
         - 3.7.3
         - 3.7.5
         - 4.0.0
+        - 4.0.1
+        - 4.1.0
         verified: 3.7.5
       dependencies:
       - name: com.unity.ugui
@@ -836,6 +898,7 @@ m_PackageAssets:
         - 3.6.11
         - 3.6.12
         - 3.7.1
+        - 3.8.1
         compatible:
         - 0.0.3
         - 0.0.4
@@ -874,6 +937,7 @@ m_PackageAssets:
         - 3.6.11
         - 3.6.12
         - 3.7.1
+        - 3.8.1
         verified: 3.6.12
       dependencies:
       - name: com.unity.ugui
@@ -965,6 +1029,7 @@ m_PackageAssets:
         - 1.14.12
         - 1.14.13
         - 1.14.15
+        - 1.14.16
         - 1.15.1
         - 1.15.4
         - 1.15.7
@@ -972,6 +1037,7 @@ m_PackageAssets:
         - 1.15.12
         - 1.15.13
         - 1.15.15
+        - 1.15.16
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -989,6 +1055,7 @@ m_PackageAssets:
         - 1.15.12
         - 1.15.13
         - 1.15.15
+        - 1.15.16
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -999,7 +1066,7 @@ m_PackageAssets:
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
-        verified: 1.15.15
+        verified: 1.15.16
       dependencies:
       - name: com.unity.nuget.newtonsoft-json
         version: 2.0.0
@@ -1094,6 +1161,9 @@ m_PackageAssets:
         - 3.0.6
         - 3.0.7
         - 3.0.9
+        - 3.0.10
+        - 3.0.12
+        - 3.0.13
         compatible:
         - 1.0.2
         - 1.0.6
@@ -1121,6 +1191,9 @@ m_PackageAssets:
         - 3.0.6
         - 3.0.7
         - 3.0.9
+        - 3.0.10
+        - 3.0.12
+        - 3.0.13
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -1194,6 +1267,7 @@ m_PackageAssets:
         - 2.0.11
         - 2.0.12
         - 2.0.14
+        - 2.0.15
         compatible:
         - 1.0.2
         - 1.0.3
@@ -1212,7 +1286,8 @@ m_PackageAssets:
         - 2.0.11
         - 2.0.12
         - 2.0.14
-        verified: 2.0.14
+        - 2.0.15
+        verified: 2.0.15
       dependencies:
       - name: com.unity.test-framework
         version: 1.1.9
@@ -1280,6 +1355,7 @@ m_PackageAssets:
         - 1.2.2
         - 1.2.3
         - 1.2.4
+        - 1.2.5
         compatible:
         - 1.0.2
         - 1.0.3
@@ -1293,7 +1369,8 @@ m_PackageAssets:
         - 1.2.2
         - 1.2.3
         - 1.2.4
-        verified: 1.2.4
+        - 1.2.5
+        verified: 1.2.5
       dependencies: []
       resolvedDependencies: []
       keywords: []
@@ -1389,6 +1466,99 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.multiplayer-hlapi.git
         revision: 0358096b3626d60d1345cfa6df97fcb2dc89152e
         path: 
+    - packageId: com.unity.postprocessing@3.2.1
+      testable: 0
+      isDirectDependency: 1
+      version: 3.2.1
+      source: 1
+      resolvedPath: Z:\University\CS2053\CS2053-project\Library\PackageCache\com.unity.postprocessing@3.2.1
+      assetPath: Packages/com.unity.postprocessing
+      name: com.unity.postprocessing
+      displayName: Post Processing
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: The post-processing stack (v2) comes with a collection of effects
+        and image filters you can apply to your cameras to improve the visuals of
+        your games.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.1.7
+        - 0.1.8
+        - 2.0.0-beta
+        - 2.0.1-beta
+        - 2.0.2-preview
+        - 2.0.3-preview
+        - 2.0.5-preview
+        - 2.0.7-preview
+        - 2.0.8-preview
+        - 2.0.9-preview
+        - 2.0.10-preview
+        - 2.0.11-preview
+        - 2.0.12-preview
+        - 2.0.13-preview
+        - 2.0.14-preview
+        - 2.0.15-preview
+        - 2.0.16-preview
+        - 2.0.17-preview
+        - 2.1.0
+        - 2.1.1
+        - 2.1.2
+        - 2.1.3
+        - 2.1.4
+        - 2.1.5
+        - 2.1.6
+        - 2.1.7
+        - 2.2.1
+        - 2.2.2
+        - 2.3.0
+        - 3.0.1
+        - 3.0.3
+        - 3.1.0
+        - 3.1.1
+        - 3.2.0
+        - 3.2.1
+        compatible:
+        - 2.3.0
+        - 3.0.1
+        - 3.0.3
+        - 3.1.0
+        - 3.1.1
+        - 3.2.0
+        - 3.2.1
+        verified: 3.2.1
+      dependencies:
+      - name: com.unity.modules.physics
+        version: 1.0.0
+      resolvedDependencies:
+      - name: com.unity.modules.physics
+        version: 1.0.0
+      keywords: []
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637810554450000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.com/Unity-Technologies/Graphics.git
+        revision: ffa21b54c20545786dd5e691f58f41468f0c153a
+        path: 
     - packageId: com.unity.purchasing@4.1.1
       testable: 0
       isDirectDependency: 1
@@ -1468,6 +1638,7 @@ m_PackageAssets:
         - 4.1.0
         - 4.1.1
         - 4.1.2
+        - 4.1.3
         compatible:
         - 0.0.3
         - 0.0.4
@@ -1511,6 +1682,7 @@ m_PackageAssets:
         - 4.1.0
         - 4.1.1
         - 4.1.2
+        - 4.1.3
         verified: 4.0.3
       dependencies:
       - name: com.unity.ugui
@@ -1618,10 +1790,16 @@ m_PackageAssets:
         - 1.1.27
         - 1.1.29
         - 1.1.30
+        - 1.1.31
+        - 2.0.1-pre.12
+        - 2.0.1-pre.18
         compatible:
         - 1.1.29
         - 1.1.30
-        verified: 1.1.30
+        - 1.1.31
+        - 2.0.1-pre.12
+        - 2.0.1-pre.18
+        verified: 1.1.31
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
@@ -1761,6 +1939,7 @@ m_PackageAssets:
         - 2.1.6
         - 2.2.0-preview.1
         - 2.2.0-preview.2
+        - 2.2.0-preview.3
         - 3.0.0-preview.1
         - 3.0.0-preview.3
         - 3.0.0-preview.4
@@ -1780,11 +1959,13 @@ m_PackageAssets:
         - 3.0.6
         - 3.2.0-pre.1
         - 3.2.0-pre.2
+        - 3.2.0-pre.3
         - 4.0.0-pre.1
         compatible:
         - 3.0.6
         - 3.2.0-pre.1
         - 3.2.0-pre.2
+        - 3.2.0-pre.3
         verified: 3.0.6
       dependencies:
       - name: com.unity.ugui
@@ -1910,7 +2091,11 @@ m_PackageAssets:
         - 1.6.1
         - 1.6.2
         - 1.6.3
+        - 1.6.4
         - 1.7.0-pre.1
+        - 1.7.0-pre.2
+        - 1.7.0
+        - 1.7.1
         compatible:
         - 1.4.8
         - 1.5.0-pre.2
@@ -1934,7 +2119,11 @@ m_PackageAssets:
         - 1.6.1
         - 1.6.2
         - 1.6.3
+        - 1.6.4
         - 1.7.0-pre.1
+        - 1.7.0-pre.2
+        - 1.7.0
+        - 1.7.1
         verified: 1.4.8
       dependencies:
       - name: com.unity.modules.director
@@ -2091,9 +2280,11 @@ m_PackageAssets:
         - 2.1.6
         - 2.1.7
         - 2.1.8
+        - 2.1.9
         compatible:
         - 2.1.8
-        verified: 2.1.8
+        - 2.1.9
+        verified: 2.1.9
       dependencies:
       - name: com.unity.modules.vr
         version: 1.0.0
@@ -3905,6 +4096,7 @@ m_PackageAssets:
         - 1.0.0
         - 1.0.5
         - 1.0.6
+        - 2.0.2
         compatible:
         - 0.1.5-preview
         - 0.1.6-preview
@@ -3912,6 +4104,7 @@ m_PackageAssets:
         - 1.0.0
         - 1.0.5
         - 1.0.6
+        - 2.0.2
         verified: 1.0.6
       dependencies: []
       resolvedDependencies: []
@@ -3970,6 +4163,9 @@ m_PackageAssets:
         - 1.1.0-pre.10
         - 1.1.0-pre.11
         - 1.1.0-pre.41
+        - 1.1.0-pre.69
+        - 1.2.0
+        - 1.3.1
         compatible:
         - 1.0.1
         - 1.1.0-pre.7
@@ -3978,6 +4174,9 @@ m_PackageAssets:
         - 1.1.0-pre.10
         - 1.1.0-pre.11
         - 1.1.0-pre.41
+        - 1.1.0-pre.69
+        - 1.2.0
+        - 1.3.1
         verified: 1.0.1
       dependencies:
       - name: com.unity.modules.unitywebrequest
@@ -4096,6 +4295,8 @@ m_PackageAssets:
         - 2.0.0
         - 2.0.1-preview.1
         - 2.0.2
+        - 3.0.1
+        - 3.0.2
         compatible:
         - 1.0.0-preview.2
         - 1.0.0-preview.3
@@ -4108,6 +4309,8 @@ m_PackageAssets:
         - 2.0.0
         - 2.0.1-preview.1
         - 2.0.2
+        - 3.0.1
+        - 3.0.2
         verified: 2.0.2
       dependencies: []
       resolvedDependencies: []
@@ -4169,6 +4372,7 @@ m_PackageAssets:
         - 1.2.1
         - 1.2.4
         - 1.2.5
+        - 1.2.6
         compatible:
         - 0.0.12-preview.2
         - 0.0.12-preview.5
@@ -4186,7 +4390,8 @@ m_PackageAssets:
         - 1.2.1
         - 1.2.4
         - 1.2.5
-        verified: 1.2.5
+        - 1.2.6
+        verified: 1.2.6
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -4252,6 +4457,7 @@ m_PackageAssets:
         - 4.0.3
         - 4.0.4
         - 4.1.0
+        - 4.2.0
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.0
@@ -4351,6 +4557,7 @@ m_PackageAssets:
         - 5.0.0-pre.2
         - 5.0.0
         - 5.0.1
+        - 5.0.2
         compatible:
         - 4.0.2
         verified: 4.0.2
