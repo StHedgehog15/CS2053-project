@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637850524790106587
-    m_Hash: 1235217942
+      ticks: 637850549658776143
+    m_Hash: 1290088384
   m_LockFileStatus:
     m_FilePath: C:/Users/Noah/Desktop/CS2053/Group Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637850524790126554
-    m_Hash: 465890446
+      ticks: 637850549658949782
+    m_Hash: 1404215224
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
