@@ -39,8 +39,10 @@ public class PlayerController : MonoBehaviour {
             velocity = new Vector3(0f, 1f * speed, 0f);
         //    anim.Play("PacManUp");    
         }
-        
-        transform.position = transform.position + velocity * Time.deltaTime * speed;
+
+        //move the player
+        transform.position += velocity * Time.deltaTime;
+        //transform.position = transform.position + velocity * Time.deltaTime * speed;
     }
 
     void OnTriggerEnter2D(Collider2D other) {
