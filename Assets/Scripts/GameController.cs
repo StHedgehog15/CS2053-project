@@ -11,11 +11,14 @@ public class GameController : MonoBehaviour
     public GameObject note;
     public GameObject player;
     public Text kitchenNote;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         // to be fixed later on 
         //spriteGlowEffect = GetComponent<SpriteGlowEffect>();
+        //audioSource = GetComponent<AudioSource>();
+    
 
     }
 
@@ -36,6 +39,8 @@ public class GameController : MonoBehaviour
 
         // update kitchen note
         kitchenNote.text = "To-do: \n\n Pick up vegetables from market \n\n Pick up son from practice \n\n";
+        // play sound
+        note.GetComponent<AudioSource>().Play();
     }
 
     void FixedUpdate() {
