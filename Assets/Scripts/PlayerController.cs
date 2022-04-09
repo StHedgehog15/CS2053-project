@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     private SpriteRenderer rend;
     private Animator anim;
     public float speed;
-    //public GameController gameControl;
+    public GameController gameControl;
 
     // Use this for initialization
     void Start() {
@@ -49,7 +49,10 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "stat_obj") {
             velocity = new Vector3(0f, 0f, 0f);
         }
-        //uncomment this in the next step
-        //to notify the GameController that the game is over   
+
+        if(other.gameObject.tag == "KitchenNote") {
+            gameControl.kitchenList();
+        }
+        
     }
 }
