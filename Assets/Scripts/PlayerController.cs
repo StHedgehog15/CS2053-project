@@ -27,27 +27,33 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         velocity = new Vector3(0f, 0f, 0f);
-            //set the direction based on  input
-            if (Input.GetKey("left")) {
-                velocity = new Vector3(-1f * speed, 0f, 0f);  
-            //    anim.Play("PacManLeft");    
-            }
-            if (Input.GetKey("right")) {
-                velocity = new Vector3(1f * speed, 0f, 0f);   
-            //    anim.Play("PacManRight");    
-            }
-            if (Input.GetKey("down")) {
-                velocity = new Vector3(0f, -1f * speed, 0f); 
-            //    anim.Play("PacManDown");    
-            }
-            if (Input.GetKey("up")) {
-                velocity = new Vector3(0f, 1f * speed, 0f);
-            //    anim.Play("PacManUp");    
-            }
+        //set the direction based on  input
+        anim.enabled = true;
+        if (Input.GetKey("left")) {
+            velocity = new Vector3(-1f * speed, 0f, 0f);   
+            //anim.Play("walk_right");  
+        }
+        if (Input.GetKey("right")) {
+            velocity = new Vector3(1f * speed, 0f, 0f);   
+            anim.Play("walk_right");
+        }
+        if (Input.GetKey("down")) {
+            velocity = new Vector3(0f, -1f * speed, 0f); 
+            //anim.Play("walk_right");   
+        }
+        if (Input.GetKey("up")) {
+            velocity = new Vector3(0f, 1f * speed, 0f);
+            //anim.Play("walk_right"); 
+        }
+        if(velocity.x == 0 && velocity.y == 0) {
+            //anim.Play("idle");
+            // stop the animation
+            anim.enabled = false;
+        }
 
-            //move the player
-            transform.position += velocity * Time.deltaTime;
-            //transform.position = transform.position + velocity * Time.deltaTime * speed;
+        //move the player
+        transform.position += velocity * Time.deltaTime;
+        //transform.position = transform.position + velocity * Time.deltaTime * speed;
 
     }
 
