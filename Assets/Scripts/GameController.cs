@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using SpriteGlow;
+//using SpriteGlow;
 
 public class GameController : MonoBehaviour
 {
@@ -34,7 +34,14 @@ public class GameController : MonoBehaviour
 
     public void kitchenList() {
         // remove glow from note by turning off Sprite Glow component
+<<<<<<< HEAD
         note.GetComponent<SpriteGlowEffect>().enabled = false;
+=======
+        //note.GetComponent<SpriteGlowEffect>().enabled = false;
+
+
+
+>>>>>>> main
         // update kitchen note
         kitchenNote.text = "To-do: \n\n Pick up vegetables from market \n\n Pick up son from practice \n\n";
         // play sound
@@ -42,8 +49,12 @@ public class GameController : MonoBehaviour
     }
 
     void FixedUpdate() {
+<<<<<<< HEAD
         note.GetComponent<SpriteGlowEffect>().GlowBrightness = Random.Range(4.0f, 5.0f);
         painting.GetComponent<SpriteGlowEffect>().GlowBrightness = Random.Range(2.0f, 3.0f);
+=======
+        //note.GetComponent<SpriteGlowEffect>().GlowBrightness = Random.Range(4.0f, 5.0f);
+>>>>>>> main
     }
 
 
