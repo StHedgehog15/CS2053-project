@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Stat_obj
   - Int_obj
+  - KitchenNote
   layers:
   - Default
   - TransparentFX
