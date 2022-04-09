@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: {fileID: 1141384820}
+  painting: {fileID: 1563001563}
   player: {fileID: 615746129}
   kitchenNote: {fileID: 1040343414}
 --- !u!4 &507343354
@@ -7123,6 +7124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1563001565}
   - component: {fileID: 1563001564}
+  - component: {fileID: 1563001566}
   m_Layer: 0
   m_Name: PaintingOfInterest
   m_TagString: Untagged
@@ -7149,7 +7151,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7195,6 +7197,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1563001566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563001563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0.90740466, g: 0.990566, b: 0, a: 1}
+  glowBrightness: 2.67
+  outlineWidth: 1
+  alphaThreshold: 0.01
+  drawOutside: 1
+  enableInstancing: 0
 --- !u!1 &1638376917
 GameObject:
   m_ObjectHideFlags: 0
