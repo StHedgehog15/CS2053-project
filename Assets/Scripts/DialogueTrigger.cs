@@ -21,7 +21,7 @@ public class DialogueTrigger: MonoBehaviour
  
     public void TriggerDialogue()
     {
-        Pause();
+        //Pause();
  
         sentences.Clear();
          
