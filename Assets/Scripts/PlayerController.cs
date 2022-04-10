@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject coach;
     bool isFloatingNote = false;
     bool isFloatingPainting = false;
+    bool atDoor = false;
     private Vector3 offset;
     private bool lastWasRight = true;
     private bool canGoLeft, canGoRight, canGoUp, canGoDown = true;
@@ -80,16 +81,20 @@ public class PlayerController : MonoBehaviour {
       
         // user interaction and pressing E
         if(Input.GetKey("e")) {
-            if(isFloatingNote) {
+            if (isFloatingNote) {
                 gameControl.kitchenList();
                 floatingTextInstance.SetActive(false);
                 isFloatingNote = false;
                 Destroy(floatingTextInstance);
-            } else if(isFloatingPainting) {
+            } 
+            else if (isFloatingPainting) {
                 gameControl.paintingStory();
                 floatingTextInstance.SetActive(false);
                 isFloatingPainting = false;
                 Destroy(floatingTextInstance);
+            } 
+            else if (atDoor) {
+                //load market scene;
             } 
         }
 
@@ -142,6 +147,19 @@ public class PlayerController : MonoBehaviour {
                 canGoDown = false;
             if (Input.GetKey("up"))
                 canGoUp = false;
+        }
+
+        if (other.gameObject.tag == "houseDoor")
+        {
+            if (Input.GetKey("left"))
+                canGoLeft = false;
+            if (Input.GetKey("right"))
+                canGoRight = false;
+            if (Input.GetKey("down"))
+                canGoDown = false;
+            if (Input.GetKey("up"))
+                canGoUp = false;
+            SceneManager.LoadScene("MarketLevel");
         }
 
         if (other.gameObject.tag == "coach")
