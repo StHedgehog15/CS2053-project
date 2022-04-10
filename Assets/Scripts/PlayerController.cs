@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         co = GetComponent<Collider2D>();
-        loudScarySound = GetComponent<AudioSource>();
+        //loudScarySound = GetComponent<AudioSource>();
         offset = new Vector3(0, 2.5f, 0);
     }
 
