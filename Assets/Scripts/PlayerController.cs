@@ -3,53 +3,63 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    private Vector3 velocity;
+    private Vector2 velocity;
 
     private SpriteRenderer rend;
     private Animator anim;
     public float speed;
     public GameController gameControl;
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private Collider2D co;
     public AudioSource loudScarySound;
     public GameObject floatingText;
     private GameObject floatingTextInstance;
     bool isFloatingNote = false;
     bool isFloatingPainting = false;
-    Vector3 offset;
+    private Vector3 offset;
     private bool lastWasRight = true;
+    private bool canGoLeft, canGoRight, canGoUp, canGoDown = true;
     // Use this for initialization
     void Start() {
-        velocity = new Vector3(0f, 0f, 0f);
+        velocity = new Vector2(0f, 0f);
         rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         co = GetComponent<Collider2D>();
         //loudScarySound = GetComponent<AudioSource>();
-        offset = new Vector3(0, 2.5f, 0);
+        offset = new Vector2(0, 2.5f);
     }
 
     // Update is called once per frame
     void Update() {
-        velocity = new Vector3(0f, 0f, 0f);
+        if (Input.GetKeyUp("left"))
+            canGoLeft = true;
+        if (Input.GetKeyUp("right"))
+            canGoRight = true;
+        if (Input.GetKeyUp("up"))
+            canGoUp = true;
+        if (Input.GetKeyUp("down"))
+            canGoDown = true;
+
+        velocity = new Vector2(0f, 0f);
         //set the direction based on  input
        // anim.enabled = true;
-        if (Input.GetKey("left")) {
-            velocity = new Vector3(-1f * speed, 0f, 0f);
+        if (Input.GetKey("left") && canGoLeft) {
+            velocity = new Vector2(-1f * speed, 0f);
             //anim.Play("walk_right");  
             lastWasRight = false;
         }
-        if (Input.GetKey("right")) {
-            velocity = new Vector3(1f * speed, 0f, 0f);
+        if (Input.GetKey("right") && canGoRight) {
+            velocity = new Vector2(1f * speed, 0f);
             //anim.Play("walk_right");
             lastWasRight = true;
         }
-        if (Input.GetKey("down")) {
-            velocity = new Vector3(0f, -1f * speed, 0f); 
+        if (Input.GetKey("down") && canGoDown) {
+            velocity = new Vector2(0f, -1f * speed); 
             //anim.Play("walk_right");   
         }
-        if (Input.GetKey("up")) {
-            velocity = new Vector3(0f, 1f * speed, 0f);
+        if (Input.GetKey("up") && canGoUp) {
+            velocity = new Vector2(0f, 1f * speed);
             //anim.Play("walk_right"); 
         }
         if(velocity.x == 0 && velocity.y == 0) {
@@ -81,7 +91,11 @@ public class PlayerController : MonoBehaviour {
             //anim.Play("walk_left");
         }
         //move the player
-        transform.position += velocity * Time.deltaTime;
+        //transform.position += velocity * Time.deltaTime;
+
+        //Use .velocity or .MovePosition to use rb's collision detection smoothly
+        rb.velocity = velocity;
+        //rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         //transform.position = transform.position + velocity * Time.deltaTime * speed;
     }
 
@@ -105,7 +119,33 @@ public class PlayerController : MonoBehaviour {
                 isFloatingPainting = true;
             }
         }
+        if (other.gameObject.tag == "BlockingElement")
+        {
+            if (Input.GetKey("left"))
+                canGoLeft = false;
+            if (Input.GetKey("right"))
+                canGoRight = false;
+            if (Input.GetKey("down"))
+                canGoDown = false;
+            if (Input.GetKey("up"))
+                canGoUp = false;
+        }
 
     }
+    /**
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "BlockingElement")
+        {
+            if (Input.GetKey("left"))
+                canGoLeft = false;
+            if (Input.GetKey("right"))
+                canGoRight = false;
+            if (Input.GetKey("down"))
+                canGoDown = false;
+            if (Input.GetKey("up"))
+                canGoUp = false;
+        }
+    }**/
 
 }
