@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SpriteGlow;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     private Vector2 velocity;
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     public AudioSource loudScarySound;
     public GameObject floatingText;
     private GameObject floatingTextInstance;
+    public GameObject coach;
     bool isFloatingNote = false;
     bool isFloatingPainting = false;
     private Vector3 offset;
@@ -141,6 +144,19 @@ public class PlayerController : MonoBehaviour {
                 canGoUp = false;
         }
 
+        if (other.gameObject.tag == "coach")
+        {
+            coach.GetComponent<AudioSource>().Play();
+            // stop music 
+            GameObject.Find("IntramuralMusic").GetComponent<AudioSource>().Stop();
+            GameObject.Find("IntramuralAmbience").GetComponent<AudioSource>().Stop();
+            GameObject.Find("InteractionMusic").GetComponent<AudioSource>().Play();
+            // remove glow 
+            coach.GetComponent<SpriteGlowEffect>().enabled = false;
+            // wait until audio is done to change scene
+            StartCoroutine(ExecuteAfterTime(16.0f));
+        }
+
     }
     /**
     void OnTriggerStay2D(Collider2D other)
@@ -157,5 +173,11 @@ public class PlayerController : MonoBehaviour {
                 canGoUp = false;
         }
     }**/
+
+    IEnumerator ExecuteAfterTime(float time) {
+        yield return new WaitForSeconds(time);
+        // load the next scene, unload the current scene
+        SceneManager.LoadScene("BattlefieldScene");
+ }
 
 }
