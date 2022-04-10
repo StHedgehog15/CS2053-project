@@ -1,13 +1,9 @@
 sceneSetups:
-- path: Assets/Scenes/Menu.unity
-  isLoaded: 0
-  isActive: 0
+- path: Assets/Scenes/BattlefieldScene.unity
+  isLoaded: 1
+  isActive: 1
   isSubScene: 0
-- path: Assets/Scenes/StartLevel.unity
-  isLoaded: 0
-  isActive: 0
-  isSubScene: 0
-- path: Assets/Scenes/MarketLevel.unity
+- path: Assets/Scenes/FinalScene.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
@@ -15,7 +11,11 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/BattlefieldScene.unity
+- path: Assets/Scenes/MarketLevel.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/Menu.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
@@ -23,7 +23,7 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/FinalScene.unity
-  isLoaded: 1
-  isActive: 1
+- path: Assets/Scenes/StartLevel.unity
+  isLoaded: 0
+  isActive: 0
   isSubScene: 0
