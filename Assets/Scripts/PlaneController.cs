@@ -7,17 +7,17 @@ using Random = UnityEngine.Random;
 public class PlaneController : MonoBehaviour
 {
     public float speed;
-    private bool isDestroyed;
     private SpriteRenderer rend;
     private Animator anim;
     private Vector3 velocity;
+    private bool canTurn;
 
     // Start is called before the first frame update
     void Start() {
-        isDestroyed = false;
         velocity = new Vector3(speed, 0f, 0f);
         rend = GetComponent<SpriteRenderer> ();
         anim = GetComponent<Animator>();
+        canTurn = true;
     }
 
     // Update is called once per frame
@@ -37,8 +37,9 @@ public class PlaneController : MonoBehaviour
 
         //1% of the time, switch the direction: 
         int change = Random.Range(0,100);
-        if (change == 0) {
+        if (change == 0 && canTurn) {
             velocity = new Vector3(-velocity.x, 0, -velocity.z);
+            canTurn = false;
         }
         
         //make sure the obect is inside the borders... if edge is hit reverse direction
@@ -46,35 +47,32 @@ public class PlaneController : MonoBehaviour
         //hits left border - should go right
         if((transform.position.x <= leftBorder + width/2.0) && velocity.x < 0f) {
             velocity = new Vector3(-speed, 0f, 0f);
-        //    anim.Play("GhostRightOrange");    
+            canTurn = true;
         }
 
         //hits right border - should go left
         if((transform.position.x >= rightBorder - width/2.0) && velocity.x > 0f) {
             velocity = new Vector3(speed, 0f, 0f);
-        //    anim.Play("GhostLeftBlue");
+            canTurn = true;
         }
 
         //hits bottom border - should go up
         if((transform.position.y <= bottomBorder + height/2.0) && velocity.y < 0f) {
             velocity = new Vector3(0f, 1f, 0f);
-        //    anim.Play("GhostUpRed");    
+            canTurn = true;
         }
 
         //hits top border - should go down
         if((transform.position.y >= topBorder - height/2.0) && velocity.y > 0f) {
             velocity = new Vector3(0f, -1f, 0f);
-        //    anim.Play("GhostDownPink");
+            canTurn = true;
         }
         transform.position = transform.position + velocity * Time.deltaTime * speed;
+        //transform.position = transform.position + velocity;
 
     }
 
-    bool isHit(Vector3 cursor) {
-        if (cursor.x == transform.position.x) {
-            return true;
-        }
-
-        return false;
+    public void OnTriggerEnter2D(Collider2D other) {
+        Destroy(gameObject);
     }
 }
