@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
     bool isFloatingNote = false;
     bool isFloatingPainting = false;
     Vector3 offset;
-
+    private bool lastWasRight = true;
     // Use this for initialization
     void Start() {
         velocity = new Vector3(0f, 0f, 0f);
@@ -35,12 +35,14 @@ public class PlayerController : MonoBehaviour {
         //set the direction based on  input
        // anim.enabled = true;
         if (Input.GetKey("left")) {
-            velocity = new Vector3(-1f * speed, 0f, 0f);   
+            velocity = new Vector3(-1f * speed, 0f, 0f);
             //anim.Play("walk_right");  
+            lastWasRight = false;
         }
         if (Input.GetKey("right")) {
-            velocity = new Vector3(1f * speed, 0f, 0f);   
+            velocity = new Vector3(1f * speed, 0f, 0f);
             //anim.Play("walk_right");
+            lastWasRight = true;
         }
         if (Input.GetKey("down")) {
             velocity = new Vector3(0f, -1f * speed, 0f); 
@@ -70,7 +72,14 @@ public class PlayerController : MonoBehaviour {
                 Destroy(floatingTextInstance);
             } 
         }
-
+        if (lastWasRight)
+        {
+            anim.Play("walk_right");
+        }
+        else
+        {
+            //anim.Play("walk_left");
+        }
         //move the player
         transform.position += velocity * Time.deltaTime;
         //transform.position = transform.position + velocity * Time.deltaTime * speed;

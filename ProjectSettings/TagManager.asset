@@ -9,6 +9,7 @@ TagManager:
   - KitchenNote
   - StartlingPot
   - painting
+  - BlockingElement
   layers:
   - Default
   - TransparentFX
