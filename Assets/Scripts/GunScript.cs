@@ -21,7 +21,7 @@ public class GunScript : MonoBehaviour {
                 isDone = true;
                 //load plane level scene
                 Debug.Log("Loading plane scene...");
-                //SceneManager.LoadScene("PlaneScene");
+                SceneManager.LoadScene("PlaneLevel");
 
             }
         }
@@ -32,10 +32,13 @@ public class GunScript : MonoBehaviour {
 
         if (other.gameObject.tag == "Player") {
             playerMounted = true;
+            goalText.text = "Press E to mount";
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         playerMounted = false;
+        goalText.text = "Destroy enemy aircraft";
+
     }
 }
