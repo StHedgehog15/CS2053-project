@@ -63,10 +63,17 @@ public class PlayerController : MonoBehaviour {
             //anim.Play("walk_right"); 
         }
         if(velocity.x == 0 && velocity.y == 0) {
-            //anim.Play("idle");
-            // stop the animation
-        //    anim.enabled = false;
+            if (lastWasRight)
+                anim.Play("idle_right");
+            else
+                anim.Play("idle_left");
+        } else {
+            if (lastWasRight)
+                anim.Play("walk_right");
+            else
+                anim.Play("walk_left");
         }
+        
       
         // user interaction and pressing E
         if(Input.GetKey("e")) {
@@ -82,14 +89,17 @@ public class PlayerController : MonoBehaviour {
                 Destroy(floatingTextInstance);
             } 
         }
+
+        /*
         if (lastWasRight)
         {
             anim.Play("walk_right");
         }
         else
         {
-            //anim.Play("walk_left");
+            anim.Play("walk_left");
         }
+        */
         //move the player
         //transform.position += velocity * Time.deltaTime;
 
