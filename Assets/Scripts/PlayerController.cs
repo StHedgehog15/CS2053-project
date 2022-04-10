@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SpriteGlow;
 
 public class PlayerController : MonoBehaviour {
     private Vector2 velocity;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     public AudioSource loudScarySound;
     public GameObject floatingText;
     private GameObject floatingTextInstance;
+    public GameObject coach;
     bool isFloatingNote = false;
     bool isFloatingPainting = false;
     private Vector3 offset;
@@ -139,6 +141,13 @@ public class PlayerController : MonoBehaviour {
                 canGoDown = false;
             if (Input.GetKey("up"))
                 canGoUp = false;
+        }
+
+        if (other.gameObject.tag == "coach")
+        {
+            coach.GetComponent<AudioSource>().Play();
+            // remove glow 
+            coach.GetComponent<SpriteGlowEffect>().enabled = false;
         }
 
     }
