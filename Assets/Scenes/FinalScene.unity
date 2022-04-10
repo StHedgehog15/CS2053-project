@@ -2337,6 +2337,7 @@ MonoBehaviour:
   timeline: {fileID: 1655070832}
   cutscene: {fileID: 11400000, guid: dbf9a72b84f5590409e5c93f29e3478f, type: 2}
   hasPlayed: 0
+  textBar: {fileID: 892902809}
   dialogue:
     name: 
     sentences: []
