@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     public GameObject painting;
     public GameObject player;
     public Text kitchenNote;
+    public Text kitchenPainting;
+    public GameObject paintingBackdrop;
     //private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
@@ -41,10 +43,22 @@ public class GameController : MonoBehaviour
         note.GetComponent<AudioSource>().Play();
     }
 
+    public void paintingStory() {
+        paintingBackdrop.SetActive(true);
+        kitchenPainting.text = "Ah.... The year was \n PLACEHOLDER TEXT \n sus";
+        // to-do: maybe scrolling text?
+        StartCoroutine(ExecuteAfterTime(10));
+    }
+
     void FixedUpdate() {
         //note.GetComponent<SpriteGlowEffect>().GlowBrightness = Random.Range(4.0f, 5.0f);
         //painting.GetComponent<SpriteGlowEffect>().GlowBrightness = Random.Range(2.0f, 3.0f);
     }
+
+    IEnumerator ExecuteAfterTime(float time) {
+        yield return new WaitForSeconds(time);
+        paintingBackdrop.SetActive(false);
+ }
 
 
 }

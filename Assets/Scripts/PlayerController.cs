@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rb;
     private Collider2D co;
     public AudioSource loudScarySound;
+    public GameObject floatingText;
+    private GameObject floatingTextInstance;
+    bool isFloatingNote = false;
+    bool isFloatingPainting = false;
+    Vector3 offset;
 
     // Use this for initialization
     void Start() {
@@ -21,6 +26,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         co = GetComponent<Collider2D>();
         loudScarySound = GetComponent<AudioSource>();
+        offset = new Vector3(0, 2.5f, 0);
     }
 
     // Update is called once per frame
@@ -49,6 +55,21 @@ public class PlayerController : MonoBehaviour {
             // stop the animation
         //    anim.enabled = false;
         }
+      
+        // user interaction and pressing E
+        if(Input.GetKey("e")) {
+            if(isFloatingNote) {
+                gameControl.kitchenList();
+                floatingTextInstance.SetActive(false);
+                isFloatingNote = false;
+                Destroy(floatingTextInstance);
+            } else if(isFloatingPainting) {
+                gameControl.paintingStory();
+                floatingTextInstance.SetActive(false);
+                isFloatingPainting = false;
+                Destroy(floatingTextInstance);
+            } 
+        }
 
         //move the player
         transform.position += velocity * Time.deltaTime;
@@ -57,10 +78,23 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "KitchenNote") {
-            gameControl.kitchenList();
+            if(!isFloatingNote) {
+                floatingTextInstance = Instantiate(floatingText, transform.position+offset, Quaternion.identity, transform);
+                floatingTextInstance.SetActive(true);
+                isFloatingNote = true;
+            }
         }
+
         if (other.gameObject.tag == "StartlingPot") {
             loudScarySound.Play();
+        }
+
+        if(other.gameObject.tag == "painting") {
+            if(!isFloatingPainting) {
+                floatingTextInstance = Instantiate(floatingText, transform.position+offset, Quaternion.identity, transform);
+                floatingTextInstance.SetActive(true);
+                isFloatingPainting = true;
+            }
         }
 
     }

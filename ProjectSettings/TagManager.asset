@@ -8,6 +8,7 @@ TagManager:
   - Int_obj
   - KitchenNote
   - StartlingPot
+  - painting
   layers:
   - Default
   - TransparentFX
