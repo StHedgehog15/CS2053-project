@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour {
     private Vector3 offset;
     private bool lastWasRight = true;
     private bool canGoLeft, canGoRight, canGoUp, canGoDown = true;
+    public int groceriesAcquired;
+
+
     // Use this for initialization
     void Start() {
         velocity = new Vector2(0f, 0f);
@@ -32,6 +35,8 @@ public class PlayerController : MonoBehaviour {
         co = GetComponent<Collider2D>();
         //loudScarySound = GetComponent<AudioSource>();
         offset = new Vector2(0, 2.5f);
+        groceriesAcquired = 0;
+
     }
 
     // Update is called once per frame
@@ -162,6 +167,25 @@ public class PlayerController : MonoBehaviour {
             SceneManager.LoadScene("MarketLevel");
         }
 
+        if (other.gameObject.tag == "VeggieStand")
+        {
+            if (Input.GetKey("left"))
+                canGoLeft = false;
+            if (Input.GetKey("right"))
+                canGoRight = false;
+            if (Input.GetKey("down"))
+                canGoDown = false;
+            if (Input.GetKey("up"))
+                canGoUp = false;
+            groceriesAcquired++;
+            gameControl.kitchenNote.text = "Groceries left: " + (3 - groceriesAcquired).ToString();
+            other.gameObject.tag = "Untagged";
+            if (groceriesAcquired >= 3) {
+                SceneManager.LoadScene("IntramuralScene");
+                
+            }
+        }
+
         if (other.gameObject.tag == "coach")
         {
             coach.GetComponent<AudioSource>().Play();
@@ -196,6 +220,6 @@ public class PlayerController : MonoBehaviour {
         yield return new WaitForSeconds(time);
         // load the next scene, unload the current scene
         SceneManager.LoadScene("BattlefieldScene");
- }
+    }
 
 }
