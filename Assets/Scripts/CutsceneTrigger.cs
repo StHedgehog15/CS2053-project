@@ -18,7 +18,7 @@ public class CutsceneTrigger : MonoBehaviour
 
     void Update() {
         // if textBar is disabled
-        if(!textBar.activeSelf) {
+        if(textBar.activeInHierarchy == false) {
             SceneManager.LoadScene("Credits");
         }
     }
