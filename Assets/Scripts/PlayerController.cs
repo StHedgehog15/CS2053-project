@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
         co = GetComponent<Collider2D>();
         //loudScarySound = GetComponent<AudioSource>();
         offset = new Vector2(0, 2.5f);
-        groceriesAcquired = 0;
+        groceriesAcquired = 3;
 
     }
 
@@ -177,12 +177,11 @@ public class PlayerController : MonoBehaviour {
                 canGoDown = false;
             if (Input.GetKey("up"))
                 canGoUp = false;
-            groceriesAcquired++;
-            gameControl.kitchenNote.text = "Groceries left: " + (3 - groceriesAcquired).ToString();
+            groceriesAcquired--;
+            gameControl.kitchenNote.text = "Groceries left: " + (groceriesAcquired).ToString();
             other.gameObject.tag = "Untagged";
-            if (groceriesAcquired >= 3) {
+            if (groceriesAcquired <= 0) {
                 SceneManager.LoadScene("IntramuralScene");
-                
             }
         }
 

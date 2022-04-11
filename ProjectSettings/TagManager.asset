@@ -12,6 +12,7 @@ TagManager:
   - BlockingElement
   - coach
   - houseDoor
+  - VeggieStand
   layers:
   - Default
   - TransparentFX
