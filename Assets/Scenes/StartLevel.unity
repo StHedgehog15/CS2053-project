@@ -915,6 +915,7 @@ MonoBehaviour:
   loudScarySound: {fileID: 175072202}
   floatingText: {fileID: 1005753812005314975, guid: d2fe175575904d942843d1fb8d1fdfcc, type: 3}
   coach: {fileID: 0}
+  groceriesAcquired: 0
 --- !u!50 &615746132
 Rigidbody2D:
   serializedVersion: 4
@@ -7903,7 +7904,7 @@ GameObject:
   - component: {fileID: 1496461775}
   m_Layer: 0
   m_Name: houseDoor
-  m_TagString: Untagged
+  m_TagString: houseDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
