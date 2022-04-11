@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour
         // to be fixed later on 
         //spriteGlowEffect = GetComponent<SpriteGlowEffect>();
         //audioSource = GetComponent<AudioSource>();
-    
 
     }
 
@@ -45,7 +44,7 @@ public class GameController : MonoBehaviour
 
     public void paintingStory() {
         paintingBackdrop.SetActive(true);
-        kitchenPainting.text = "Ah.... The year was \n PLACEHOLDER TEXT \n sus";
+        kitchenPainting.text = "Ah, my family... \n\nNot much else keeping me together\n\nthese days";
         // to-do: maybe scrolling text?
         StartCoroutine(ExecuteAfterTime(10));
     }
