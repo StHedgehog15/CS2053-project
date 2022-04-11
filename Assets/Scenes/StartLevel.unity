@@ -915,6 +915,7 @@ MonoBehaviour:
   loudScarySound: {fileID: 175072202}
   floatingText: {fileID: 1005753812005314975, guid: d2fe175575904d942843d1fb8d1fdfcc, type: 3}
   coach: {fileID: 0}
+  groceriesAcquired: 0
 --- !u!50 &615746132
 Rigidbody2D:
   serializedVersion: 4
