@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TargeterController : MonoBehaviour {
     private Vector3 velocity;
@@ -12,6 +13,7 @@ public class TargeterController : MonoBehaviour {
     public GameObject playerShot;
     public Text objText;
     private bool canFire;
+    private GameObject b;
 
     // Start is called before the first frame update
     void Start() {
@@ -46,12 +48,16 @@ public class TargeterController : MonoBehaviour {
         if (Input.GetKey(KeyCode.Space) && canFire) {
             Fire();
         }
-    }
 
+        // if count of objects is greater than 0, display the count
+        if (GameObject.FindGameObjectsWithTag("Stat_obj").Length == 0) {
+            SceneManager.LoadScene("FinalScene");
+        }
+    }
     
     void Fire() {
-        shootSound.Play();
-        GameObject b = Instantiate(playerShot, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
+        //shootSound.Play();
+        b = Instantiate(playerShot, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
         b.GetComponent<ShotController>().InitPosition(transform.position);
         canFire = false;
         StartCoroutine(PlayerCanFireAgain());
@@ -62,6 +68,7 @@ public class TargeterController : MonoBehaviour {
         //this will pause the execution of this method for 3 seconds without blocking
         yield return new WaitForSecondsRealtime(3);
         canFire = true;
+        Destroy(b);
         objText.text = "Press Space to fire";
     }
 
